@@ -15,6 +15,7 @@ Esta matriz conecta cada obrigação do enunciado atualizado a uma evidência ve
 | Equipe, RMs e papéis | `entregaveis/matriz_responsabilidades.csv`, proposta, relatório, site Projeto | Seis nomes em ordem alfabética; papéis propostos, a validar entre integrantes. |
 | Riscos, limites e privacidade | Proposta, relatório e site Qualidade/Projeto | Sem alegação de fraude; índice minimizado; ausências de rótulos visíveis. |
 | Reprodução e testes | `README.md`, `tests/validate.js`, pipeline | Testes automatizados e instruções de reprocessamento; ZIPs oficiais exigidos para refazer o pipeline. |
+| Repositório acessível | [GitHub Farol ES](https://github.com/Matheus-zgld/CP2-CPSI-Farol-ES-2026) | Público; contém código, testes, documentação e índices derivados, mas não os ZIPs brutos. |
 | Acesso da banca | Links desta matriz | Site público; Docs/Slides/PDF para qualquer pessoa com o link, visualização. |
 
 ## Checklist final do grupo

@@ -5,6 +5,7 @@ Projeto da turma **2ESA**. A POC investiga os pagamentos oficiais do Espírito S
 ## Entrega principal
 
 - [POC interativa publicada](https://farol-es-cp2-2026.zetzgld11.chatgpt.site) — pública, responsiva, com filtro por ano/mês/função e exportação dos IDs e valores de cada recorte.
+- [Repositório público reproduzível](https://github.com/Matheus-zgld/CP2-CPSI-Farol-ES-2026) — código, testes, documentação e derivados minimizados, sem ZIPs brutos.
 - [Proposta técnica em PDF, 4 páginas](https://drive.google.com/file/d/1_mn2HXBFTC2qIUZZv5rgfu2ZyMfmjGh_/view) — dentro do limite de oito páginas.
 - [Fonte editável da proposta no Google Docs](https://docs.google.com/document/d/19bpmqYhIHRyRZHQmcLumg4TLw07diCUzG3kkiuHZGlI/edit).
 - [Apresentação editável no Google Slides, 8 slides](https://docs.google.com/presentation/d/1kj8Hq2QGz1p5_X9S8k5zFIqhhy9U0C-qIiNzxV9QUhQ/edit).
