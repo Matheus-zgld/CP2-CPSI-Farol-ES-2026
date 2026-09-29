@@ -1,27 +1,27 @@
 # Guia de apresentação — Farol ES | 2ESA | 12 minutos
 
-O [Google Slides oficial](https://docs.google.com/presentation/d/1kj8Hq2QGz1p5_X9S8k5zFIqhhy9U0C-qIiNzxV9QUhQ/edit) tem **oito slides**. A mesma sequência está disponível no modo Apresentação do site. Os papéis de fala abaixo são uma **proposta**, a confirmar e ensaiar pelo grupo. Abrir site e slides antes da banca. O cronômetro do site começa em 12:00 e pode ser pausado.
+O [Google Slides oficial](https://docs.google.com/presentation/d/1kj8Hq2QGz1p5_X9S8k5zFIqhhy9U0C-qIiNzxV9QUhQ/edit) tem **oito slides**. O modo Apresentação do site oferece uma síntese alternativa; para a banca, seguir os tempos do Google Slides abaixo. Os papéis de fala são uma **proposta**, a confirmar e ensaiar pelo grupo. Abrir site e slides antes da banca. O cronômetro do site começa em 12:00 e pode ser pausado.
 
 | Tempo | Slide | Voz principal | Mensagem verificável |
 |---|---:|---|---|
-| 0:00–1:00 | 1 | Matheus | Transparência útil é responder perguntas com trilha para a fonte. Público: jornalistas de dados. |
-| 1:00–2:00 | 2 | Mateus | Oito ZIPs oficiais, 1.092.158 linhas, 71 campos; 0 malformadas e 0 IDs duplicados. |
-| 2:00–3:00 | 3 | Mateus | Q1: pagamento líquido de R$ 10,34 bi para R$ 11,28 bi, +9,1%; Saúde +R$ 397,54 mi e Transporte +R$ 249,99 mi. |
-| 3:00–4:00 | 4 | Dennis | Q2: nomes de órgão ausentes; nomes de função ausentes em 2025. Código preservado; rótulo recuperado é marcado. |
-| 4:00–6:30 | 5 | Francisco | Abrir a POC; filtrar 2025, mês e função; ler soma/contagem; mostrar IDs e exportar CSV integral do recorte. |
-| 6:30–8:30 | 5 | Sara | Demonstrar caminho de volta, estado vazio/erro, painel de qualidade e IC didático versus proporção censitária. |
-| 8:30–9:30 | 6 | RHARIEL | Pipeline em streaming, índices minimizados, segurança, testes e atribuições propostas. |
-| 9:30–10:45 | 7 | Matheus | 16 semanas; R$ 168.480 de investimento; R$ 8.900/mês de operação estimada. Valores simulados, com critérios de aceite. |
-| 10:45–12:00 | 8 | Sara e Dennis | Limites, riscos, o que está funcional e próximo passo. Sinal não é prova de irregularidade. |
+| 0:00–0:15 | 1 | Matheus | Capa e tese: transparência útil é responder perguntas com trilha para a fonte. |
+| 0:15–1:00 | 2 | Matheus | Público: jornalistas de dados. Oito ZIPs oficiais, 1.092.158 registros. |
+| 1:00–2:30 | 3 | Mateus | Q1: pagamento líquido de R$ 10,34 bi para R$ 11,28 bi, +9,1%; Saúde +R$ 397,54 mi e Transporte +R$ 249,99 mi. |
+| 2:30–3:45 | 4 | Dennis | Q2: nomes de órgão ausentes; nomes de função ausentes em 2025. Código preservado; rótulo recuperado é marcado. |
+| 3:45–6:15 | 5 | Francisco | Abrir a POC; filtrar 2025, mês e função; ler soma/contagem; mostrar IDs e exportar CSV integral do recorte. |
+| 6:15–8:15 | 5 | Sara | Mostrar estado vazio/erro, painel de qualidade e IC didático versus proporção censitária. |
+| 8:15–9:15 | 6 | RHARIEL | Pipeline em streaming, índices minimizados, segurança, 17 testes e atribuições propostas. |
+| 9:15–10:30 | 7 | Matheus | 16 semanas; R$ 168.480 de investimento; R$ 8.900/mês de operação estimada. Valores simulados. |
+| 10:30–12:00 | 8 | Sara e Dennis | Limites, riscos e próximo passo. Sinal não é prova de irregularidade. |
 
 ## Roteiro exato da demonstração — 4 min 30 s
 
-1. **4:00–4:30** — Visão Geral: alternar 2024/2025, apontar o aumento de 9,1% sem confundir preço corrente com crescimento real.
-2. **4:30–5:00** — Evidências: conectar Q1 ao comparador e Q2 ao painel de lacunas de qualidade.
-3. **5:00–6:30** — Rastrear: selecionar ano, mês e função, clicar Consultar. Mostrar contagem, total líquido e registros negativos. Abrir as primeiras linhas e clicar em Baixar recorte completo. Explicar que os 25 exibidos são prévia, enquanto o CSV baixado tem todas as linhas do recorte. O índice mensal é conciliado com o agregado.
-4. **6:30–7:10** — Selecionar um recorte sem linhas ou simular falha de rede apenas se houver tempo. A interface deve informar o estado sem fabricar dados. A busca individual por documento é apenas um atalho entre maiores pagamentos; declarar esse limite.
-5. **7:10–7:50** — Qualidade: mostrar ausência de rótulos, histórico e IDs únicos. Não chamar qualquer variação de fraude.
-6. **7:50–8:30** — Intervalo de confiança: amostra 1.200, 30 valores negativos, estimativa 2,50%, IC 95% Wilson 1,76%–3,55%; censo 2,17%. Explicar que o IC mede variação amostral e não incerteza do total processado.
+1. **3:45–4:15** — Visão Geral: alternar 2024/2025, apontar o aumento nominal de 9,1% sem confundir com crescimento real.
+2. **4:15–4:45** — Evidências: conectar Q1 ao comparador e Q2 ao painel de lacunas de qualidade.
+3. **4:45–6:15** — Rastrear: selecionar ano, mês e função, clicar Consultar. Mostrar contagem, total líquido e registros negativos. Abrir as primeiras linhas e clicar em Baixar recorte completo. Os 25 exibidos são prévia; o CSV tem todas as linhas do recorte. O índice mensal é conciliado com o agregado.
+4. **6:15–6:55** — Mostrar um estado vazio ou erro apenas se houver tempo. A busca individual por documento é atalho entre maiores pagamentos; declarar esse limite.
+5. **6:55–7:35** — Qualidade: mostrar ausência de rótulos, histórico e IDs únicos. Não chamar qualquer variação de fraude.
+6. **7:35–8:15** — Intervalo de confiança: amostra 1.200, 30 valores negativos, estimativa 2,50%, IC 95% Wilson 1,76%–3,55%; censo 2,17%. O IC mede variação amostral, não incerteza do total processado.
 
 ## Reserva operacional
 
