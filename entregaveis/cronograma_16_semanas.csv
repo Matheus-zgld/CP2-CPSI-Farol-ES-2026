@@ -1,0 +1,8 @@
+etapa;semanas;atividades;responsaveis;entregaveis;dependencias;criterio_conclusao;risco_principal
+Descoberta;1-2;Pesquisa público questões métricas e recorte;Matheus e Sara;Visão jornada hipóteses e métricas;Dados fornecidos;Duas questões e jornada aprovadas;Escopo amplo
+Planejamento;3;Backlog arquitetura riscos segurança e plano de dados;Matheus e Rhariel;Backlog ADR matriz de riscos e plano;Descoberta;Arquitetura e critérios aprovados;Decisão tardia
+Engenharia de dados;4-6;Ingestão qualidade normalização catálogo e testes;Mateus e Dennis;Pipeline relatório de qualidade e dados tratados;Dicionário e ZIPs;Oito ZIPs processados e totais reconciliados;Campos ausentes
+Versão alfa;7-10;Comparação gráficos navegação e rastreio;Francisco e Rhariel;POC alfa;Pipeline estável;Jornada parcial com dados oficiais;Desempenho
+Versão beta;11-13;Integração acessibilidade privacidade testes e logs;Dennis Francisco e Sara;POC beta e relatório de testes;Alfa;Testes críticos aprovados;Regressões
+Validação e implantação;14-15;Teste com usuários correções carga segurança e deploy;Sara Rhariel e Dennis;POC publicada e aceite de usuário;Beta;Jornada concluída pelo público-alvo;Baixa adoção
+Encerramento;16;Relatório slides treinamento transferência e demo;Todos;Pacote final e apresentação;Aceite técnico;Todos os entregáveis verificáveis;Falha na demonstração

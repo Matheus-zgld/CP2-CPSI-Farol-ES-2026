@@ -1,0 +1,21 @@
+const fs=require('fs'),path=require('path'),root=path.resolve(__dirname,'..');
+const data=JSON.parse(fs.readFileSync(path.join(root,'analysis.json'),'utf8'));
+let passed=0;function test(name,fn){try{fn();console.log('✓',name);passed++}catch(e){console.error('✗',name,'—',e.message);process.exitCode=1}}function eq(a,b){if(a!==b)throw new Error(`${a} !== ${b}`)}function ok(v,m='condição falsa'){if(!v)throw new Error(m)}
+test('contagem de 2024',()=>eq(data.years['2024'].total.rows,505950));
+test('contagem de 2025',()=>eq(data.years['2025'].total.rows,586208));
+test('total de 1.092.158 registros',()=>eq(data.years['2024'].total.rows+data.years['2025'].total.rows,1092158));
+test('nenhuma linha malformada',()=>eq(data.files.reduce((s,f)=>s+f.malformed,0),0));
+test('nenhum ID duplicado',()=>eq(data.years['2024'].duplicateIds+data.years['2025'].duplicateIds,0));
+test('pagamento 2024 reconciliado',()=>ok(Math.abs(data.years['2024'].total.pago-10337098858.6199)<.01));
+test('pagamento 2025 reconciliado',()=>ok(Math.abs(data.years['2025'].total.pago-11275208229.5304)<.01));
+test('crescimento aproximado de 9,1%',()=>{const a=data.years['2024'].total.pago,b=data.years['2025'].total.pago;ok(Math.abs((b/a-1)*100-9.075)<.01)});
+test('rótulo de Saúde recuperado',()=>eq(data.years['2025'].top.funcoes.find(x=>x.code==='10').label,'SAÚDE'));
+test('pessoas físicas protegidas',()=>ok([...data.years['2024'].topPayments,...data.years['2025'].topPayments].every(r=>!/[0-9]{3}\.[0-9]{3}\.[0-9]{3}/.test(r.favorecido))));
+test('site contém as cinco áreas',()=>{const h=fs.readFileSync(path.join(root,'site','dist','index.html'),'utf8');for(const id of ['visao','evidencias','rastrear','qualidade','projeto'])ok(h.includes(`id="${id}"`),id)});
+test('apresentação possui no máximo 8 slides',()=>{const a=fs.readFileSync(path.join(root,'site','dist','app.js'),'utf8');eq((a.match(/\['\d\d ·/g)||[]).length,8)});
+test('24 recortes íntegros conciliam com os totais mensais',()=>{let total=0;for(const year of ['2024','2025'])for(let month=1;month<=12;month++){const m=String(month).padStart(2,'0'),file=path.join(root,'site','dist','recortes',`${year}-${m}.csv`),lines=fs.readFileSync(file,'utf8').trimEnd().split(/\r?\n/);eq(lines.shift(),'id;documento;funcao;orgao;valor_pago;arquivo');let cents4=0;for(const line of lines){const fields=line.split(';');ok(fields.length===6,`campos ${year}-${m}`);cents4+=Math.round(Number(fields[4])*10000)}eq(lines.length,data.years[year].months[m].rows);ok(Math.abs(cents4/10000-data.years[year].months[m].pago)<.02,`total ${year}-${m}`);total+=lines.length}eq(total,1092158)});
+test('índice público minimiza dados pessoais',()=>{const h=fs.readFileSync(path.join(root,'site','dist','recortes','2025-12.csv'),'utf8').split(/\r?\n/)[0];ok(!/cpf|cnpj|nis|banco|agencia|conta|favorecido/i.test(h))});
+test('intervalo amostral é reproduzível e distingue censo',()=>{const c=JSON.parse(fs.readFileSync(path.join(root,'site','dist','ci_2025.json'),'utf8'));eq(c.population,data.years['2025'].total.rows);eq(c.negativePopulation,data.years['2025'].total.negPaid);eq(c.n,1200);ok(c.lower<c.estimate&&c.estimate<c.upper);ok(c.lower<c.censusProportion&&c.censusProportion<c.upper)});
+test('orçamento fecha em R$ 168.480',()=>{const csv=fs.readFileSync(path.join(root,'entregaveis','proposta_financeira.csv'),'utf8');ok(csv.includes('TOTAL;POC 16 semanas;;;;168480,00'))});
+test('equipe em ordem alfabética no README',()=>{const r=fs.readFileSync(path.join(root,'README.md'),'utf8'),names=['Dennis','Francisco','Mateus Nunes','Matheus Henrique','RHARIEL','Sara'];let last=-1;for(const n of names){const i=r.indexOf(`- ${n}`);ok(i>last,n);last=i}});
+console.log(`\n${passed}/17 testes aprovados.`);

@@ -1,0 +1,27 @@
+categoria;funcao_item;horas;valor_hora;quantidade_meses;valor_total;observacao
+Pessoal;Produto e Gestão;120;120,00;;14400,00;Visão backlog governança e financeiro
+Pessoal;Arquitetura e Backend;180;150,00;;27000,00;Arquitetura segurança contratos e implantação
+Pessoal;Engenharia de Dados;220;140,00;;30800,00;Ingestão qualidade modelo e reprodutibilidade
+Pessoal;Frontend;200;120,00;;24000,00;POC visualizações acessibilidade e responsividade
+Pessoal;Qualidade e Segurança;160;100,00;;16000,00;Automação aceite acessibilidade e revisão de segurança
+Pessoal;UX e Pesquisa;120;125,00;;15000,00;Jornada conteúdo pesquisa e validação
+Infraestrutura;Cloud da POC;;;;6400,00;Ambientes armazenamento e tráfego por 16 semanas
+Infraestrutura;Observabilidade;;;;2000,00;Logs métricas e alertas
+Infraestrutura;Domínio monitoramento e backup;;;;560,00;Serviços simulados
+Licenças;Pesquisa e acessibilidade;;;;2800,00;Ferramentas para validação
+Encargos;Encargos e impostos simulados;;;;18000,00;Memória acadêmica
+Contingência;Reserva de risco;;;;11520,00;6,84 por cento do custo base
+TOTAL;POC 16 semanas;;;;168480,00;Abaixo do teto de R$ 180.000
+Operação mensal;Cloud;;;;2400,00;Produção
+Operação mensal;Observabilidade;;;;800,00;Logs e alertas
+Operação mensal;Manutenção de dados;;;;2400,00;Atualizações e qualidade
+Operação mensal;Suporte;;;;1800,00;Atendimento e correções
+Operação mensal;Segurança e backup;;;;1000,00;Revisões e retenção
+Operação mensal;Domínio e serviços;;;;500,00;Serviços recorrentes
+TOTAL;Operação mensal;;;;8900,00;
+TOTAL;Operação por 12 meses;;;;106800,00;
+Marco;Planejamento aprovado;;;15%;25272,00;Arquitetura backlog e plano de dados
+Marco;Pipeline de dados;;;20%;33696,00;Ingestão e tratamento demonstráveis
+Marco;Versão alfa;;;20%;33696,00;Jornada parcialmente funcional
+Marco;Versão beta;;;25%;42120,00;POC integrada e testada
+Marco;Aceite final;;;20%;33696,00;Demonstração documentação e transferência

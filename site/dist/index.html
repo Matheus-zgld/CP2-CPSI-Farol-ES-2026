@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Farol ES: exploração acessível, comparativa e rastreável das despesas públicas do Espírito Santo em 2024 e 2025.">
+  <meta name="theme-color" content="#07121f">
+  <title>Farol ES — Transparência Inteligente</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307121f'/%3E%3Cpath d='M11 46h42M16 39h32M21 32h22M26 25h12' stroke='%2335d0ba' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='15' r='5' fill='%23ffbd59'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topbar">
+    <a class="brand" href="#visao" aria-label="Farol ES, início">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><strong>FAROL</strong><small>ES · transparência inteligente</small></span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <button class="nav-btn active" data-view="visao">Visão geral</button>
+      <button class="nav-btn" data-view="evidencias">Evidências</button>
+      <button class="nav-btn" data-view="rastrear">Rastrear</button>
+      <button class="nav-btn" data-view="qualidade">Qualidade</button>
+      <button class="nav-btn" data-view="projeto">Projeto</button>
+    </nav>
+    <div class="top-actions">
+      <button class="ghost" id="exportBtn" title="Baixar resumo filtrado em CSV">Exportar</button>
+      <button class="present" id="presentBtn">Modo apresentação <kbd>P</kbd></button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="view active" id="visao" aria-labelledby="visao-title">
+      <div class="control-strip">
+        <div>
+          <p class="eyebrow">PORTAL DA TRANSPARÊNCIA · ESPÍRITO SANTO</p>
+          <h1 id="visao-title">O gasto público, explicado e verificável.</h1>
+        </div>
+        <div class="year-switch" role="group" aria-label="Ano em destaque">
+          <button data-year="2024">2024</button>
+          <button data-year="2025" class="active">2025</button>
+          <button data-year="compare">Comparar</button>
+        </div>
+      </div>
+
+      <div class="status-line">
+        <span><b class="pulse"></b> Base processada integralmente</span>
+        <span id="recordCount">1.092.158 registros</span>
+        <span>Atualização da análise: 29 set 2026</span>
+        <button class="text-btn" data-go="qualidade">Ver proveniência →</button>
+      </div>
+
+      <div class="kpi-grid" id="kpiGrid" aria-live="polite"></div>
+
+      <div class="dashboard-grid">
+        <article class="panel wide">
+          <header class="panel-head">
+            <div><span class="tag">SÉRIE MENSAL</span><h2>Pagamentos líquidos por mês</h2></div>
+            <div class="legend"><span><i class="dot y24"></i>2024</span><span><i class="dot y25"></i>2025</span></div>
+          </header>
+          <div class="chart-wrap"><svg id="monthlyChart" role="img" aria-label="Gráfico comparativo de pagamentos mensais em 2024 e 2025"></svg></div>
+          <p class="chart-note" id="monthlyInsight"></p>
+        </article>
+
+        <article class="panel signal-panel">
+          <header class="panel-head"><div><span class="tag amber">SINAL ANALÍTICO</span><h2>O que mudou?</h2></div><span class="score">+9,1%</span></header>
+          <ol class="signals" id="signals"></ol>
+          <button class="panel-link" data-go="evidencias">Abrir investigação completa →</button>
+        </article>
+
+        <article class="panel ranking-panel">
+          <header class="panel-head"><div><span class="tag">ONDE</span><h2>Funções com maior pagamento</h2></div><select id="rankingYear" aria-label="Ano do ranking"><option>2025</option><option>2024</option></select></header>
+          <div id="functionRanking" class="ranking"></div>
+        </article>
+
+        <article class="panel explainer-panel">
+          <header class="panel-head"><div><span class="tag">COMO LER</span><h2>Empenhar não é pagar</h2></div></header>
+          <div class="money-flow" aria-label="Fluxo da despesa pública">
+            <div><span>1</span><b>Empenho</b><small>reserva</small></div><i>→</i><div><span>2</span><b>Liquidação</b><small>entrega atestada</small></div><i>→</i><div><span>3</span><b>Pagamento</b><small>saída financeira</small></div>
+          </div>
+          <p>Os indicadores são somas líquidas: estornos aparecem como valores negativos e não são ocultados.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="evidencias" aria-labelledby="evidencias-title">
+      <div class="section-intro"><div><p class="eyebrow">DA PERGUNTA AO REQUISITO</p><h1 id="evidencias-title">Duas investigações, decisões concretas.</h1></div><p>As evidências abaixo foram calculadas sobre os oito arquivos oficiais completos. “Sinal” significa prioridade de investigação, nunca prova de fraude.</p></div>
+      <div class="question-grid">
+        <article class="question-card q1">
+          <div class="q-index">Q1</div><p class="question">Como o perfil dos pagamentos mudou entre 2024 e 2025?</p>
+          <div class="finding"><strong>+R$ 938,1 mi</strong><span>crescimento líquido total</span></div>
+          <div class="mini-bars" id="deltaBars"></div>
+          <div class="reasoning"><b>Evidência</b><p>Saúde cresceu cerca de R$ 397,54 mi (+21,7%) e assumiu a liderança. Transporte avançou cerca de R$ 249,99 mi (+36,7%), enquanto Previdência recuou.</p><b>Decisão de produto</b><p>Comparador anual por função, variação absoluta e percentual, com acesso direto aos registros que compõem o total.</p></div>
+        </article>
+        <article class="question-card q2">
+          <div class="q-index">Q2</div><p class="question">Os dados permitem explicar os totais sem esconder lacunas?</p>
+          <div class="finding warn"><strong>100%</strong><span>dos nomes de função ausentes em 2025</span></div>
+          <div class="quality-compare">
+            <div><span>Nome do órgão</span><b>100% ausente</b><small>2024 e 2025</small></div>
+            <div><span>Histórico vazio</span><b>18,8% → 20,8%</b><small>piora de 2 p.p.</small></div>
+            <div><span>IDs duplicados</span><b>0</b><small>1.092.158 IDs únicos</small></div>
+          </div>
+          <div class="reasoning"><b>Evidência</b><p>Os códigos permanecem íntegros. O pipeline recupera rótulos de função a partir de 2024, mas marca explicitamente a origem do preenchimento.</p><b>Decisão de produto</b><p>Painel de qualidade, selo “rótulo recuperado” e estado de erro explicativo quando a rastreabilidade é insuficiente.</p></div>
+        </article>
+      </div>
+      <article class="panel methodology">
+        <header class="panel-head"><div><span class="tag">MÉTODO</span><h2>Como chegamos aos resultados</h2></div><span class="method-badge">Reproduzível</span></header>
+        <div class="steps"><div><b>01</b><span>Ingestão</span><small>8 ZIPs · UTF-8 · CSV delimitado por “;”</small></div><div><b>02</b><span>Validação</span><small>71 colunas · tipos · nulos · IDs</small></div><div><b>03</b><span>Tratamento</span><small>moeda pt-BR · estornos · rótulos</small></div><div><b>04</b><span>Análise</span><small>tempo · função · concentração</small></div><div><b>05</b><span>Entrega</span><small>indicador → registro → fonte</small></div></div>
+      </article>
+      <article class="panel ci-panel"><header class="panel-head"><div><span class="tag">ESTATÍSTICA · LEITURA RESPONSÁVEL</span><h2>Intervalo de confiança, sem confundir amostra e censo</h2></div></header><div id="ciResult">Carregando demonstração estatística…</div></article>
+    </section>
+
+    <section class="view" id="rastrear" aria-labelledby="rastrear-title">
+      <div class="section-intro"><div><p class="eyebrow">TRILHA DE EVIDÊNCIAS</p><h1 id="rastrear-title">Do indicador ao documento.</h1></div><p>Consulte um recorte completo por ano, mês e função. A busca individual abaixo é apenas um atalho demonstrativo.</p></div>
+      <article class="panel recorte-panel" aria-labelledby="recorte-title">
+        <header class="panel-head"><div><span class="tag">BASE INTEGRAL · RECORTE VERIFICÁVEL</span><h2 id="recorte-title">Investigue os registros por trás do total</h2></div></header>
+        <div class="recorte-filters">
+          <label>Ano<select id="recorteYear"><option>2025</option><option>2024</option></select></label>
+          <label>Mês<select id="recorteMonth"><option value="12">Dezembro</option><option value="11">Novembro</option><option value="10">Outubro</option><option value="09">Setembro</option><option value="08">Agosto</option><option value="07">Julho</option><option value="06">Junho</option><option value="05">Maio</option><option value="04">Abril</option><option value="03">Março</option><option value="02">Fevereiro</option><option value="01">Janeiro</option></select></label>
+          <label>Função<select id="recorteFunction"><option value="">Todas as funções</option></select></label>
+          <button id="recorteApply">Consultar recorte</button>
+        </div>
+        <p class="recorte-status" id="recorteStatus" role="status">Selecione os filtros e consulte a base.</p>
+        <div id="recorteResult" aria-live="polite"></div>
+      </article>
+      <div class="trace-layout">
+        <aside class="trace-search">
+          <label for="traceInput">ID ou documento</label>
+          <div class="searchbox"><input id="traceInput" placeholder="Ex.: 2025OB06641" autocomplete="off"><button id="traceBtn">Buscar</button></div>
+          <p>Experimente <button class="inline-example" data-example="2025OB06641">2025OB06641</button></p>
+          <hr>
+          <label for="traceSelect">Registros de demonstração</label>
+          <select id="traceSelect"></select>
+          <div class="privacy-note"><span aria-hidden="true">◉</span><p><b>Privacidade por desenho</b><br>O índice do recorte contém somente ID, documento, códigos, valor pago e arquivo de origem; não inclui CPF/CNPJ, NIS ou dados bancários.</p></div>
+        </aside>
+        <article class="trace-result" id="traceResult" aria-live="polite"></article>
+      </div>
+    </section>
+
+    <section class="view" id="qualidade" aria-labelledby="qualidade-title">
+      <div class="section-intro"><div><p class="eyebrow">CONFIABILIDADE VISÍVEL</p><h1 id="qualidade-title">A qualidade também é um dado.</h1></div><p>Medimos completude, unicidade e estrutura antes de calcular indicadores. Lacunas não são preenchidas silenciosamente.</p></div>
+      <div class="quality-kpis" id="qualityKpis"></div>
+      <article class="panel quality-table-panel"><header class="panel-head"><div><span class="tag">COMPLETUDE</span><h2>Campos críticos por ano</h2></div><span class="method-badge">quanto menor, melhor</span></header><div class="table-wrap"><table><thead><tr><th>Campo</th><th>2024 ausente</th><th>2025 ausente</th><th>Leitura</th></tr></thead><tbody id="qualityTable"></tbody></table></div></article>
+      <div class="two-col">
+        <article class="panel"><header class="panel-head"><div><span class="tag">PROVENIÊNCIA</span><h2>O que foi processado</h2></div></header><ul class="file-list" id="fileList"></ul></article>
+        <article class="panel"><header class="panel-head"><div><span class="tag amber">LIMITAÇÕES</span><h2>O que não afirmar</h2></div></header><ul class="limits"><li>Valores negativos podem representar estornos ou correções; exigem contexto documental.</li><li>Concentração de pagamentos não implica favorecimento indevido.</li><li>Os dados refletem registros publicados, não a totalidade da realidade administrativa.</li><li>Rótulos de função de 2025 foram recuperados por código a partir de 2024 e são sinalizados.</li><li>A POC não substitui auditoria, controle interno ou investigação formal.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="view" id="projeto" aria-labelledby="projeto-title">
+      <div class="section-intro"><div><p class="eyebrow">CPSI SIMULADO · PLANO DE EXECUÇÃO</p><h1 id="projeto-title">Da POC a um serviço público sustentável.</h1></div><p>Plano de 16 semanas, orçamento abaixo do teto e responsabilidades verificáveis.</p></div>
+      <div class="project-grid">
+        <article class="panel architecture"><header class="panel-head"><div><span class="tag">ARQUITETURA</span><h2>Separação de responsabilidades</h2></div></header><div class="arch-flow"><div><small>FONTES</small><b>8 ZIPs oficiais</b><span>2024 + 2025</span></div><i>→</i><div><small>DADOS</small><b>Pipeline validado</b><span>tipos · qualidade · logs</span></div><i>→</i><div><small>ANÁLISE</small><b>Camada semântica</b><span>métricas · sinais · proveniência</span></div><i>→</i><div><small>EXPERIÊNCIA</small><b>Web acessível</b><span>consulta · comparação · rastreio</span></div></div><div class="tech-row"><span>Java 21</span><span>CSV streaming</span><span>JSON estático</span><span>HTML/CSS/JS</span><span>Testes automatizados</span><span>Cloudflare Sites</span></div></article>
+        <article class="panel budget"><header class="panel-head"><div><span class="tag amber">INVESTIMENTO</span><h2>Proposta financeira</h2></div><strong>R$ 168.480</strong></header><div class="budget-bars"><div><span>Pessoas</span><i style="--w:76%"></i><b>R$ 127.200</b></div><div><span>Infra + licenças</span><i style="--w:7%"></i><b>R$ 11.760</b></div><div><span>Encargos simulados</span><i style="--w:11%"></i><b>R$ 18.000</b></div><div><span>Contingência</span><i style="--w:6%"></i><b>R$ 11.520</b></div></div><footer><span>Operação mensal pós-POC <b>R$ 8.900</b></span><span>12 meses <b>R$ 106.800</b></span></footer></article>
+      </div>
+      <article class="panel timeline"><header class="panel-head"><div><span class="tag">16 SEMANAS</span><h2>Cronograma orientado a marcos</h2></div></header><div class="timeline-grid"><div><b>S1–2</b><span>Descoberta</span><small>problema, público, questões</small></div><div><b>S3</b><span>Planejamento</span><small>backlog, arquitetura, riscos</small></div><div><b>S4–6</b><span>Engenharia de dados</span><small>ingestão, qualidade, catálogo</small></div><div><b>S7–10</b><span>Versão alfa</span><small>comparação e rastreio</small></div><div><b>S11–13</b><span>Versão beta</span><small>integração, acessibilidade, testes</small></div><div><b>S14–15</b><span>Validação</span><small>jornada, carga, segurança</small></div><div><b>S16</b><span>Aceite</span><small>deploy, documentação, transferência</small></div></div></article>
+      <div class="two-col">
+        <article class="panel"><header class="panel-head"><div><span class="tag">EQUIPE</span><h2>Responsabilidades principais</h2></div></header><div class="team" id="team"></div></article>
+        <article class="panel"><header class="panel-head"><div><span class="tag amber">RISCOS</span><h2>Riscos priorizados</h2></div></header><div class="risk-list"><div><b>Dados incompletos</b><span class="risk high">alto</span><small>validação + transparência de lacunas · Engenharia de Dados</small></div><div><b>Desempenho com alto volume</b><span class="risk med">médio</span><small>pré-agregação + carga incremental · Arquitetura</small></div><div><b>Interpretação como fraude</b><span class="risk high">alto</span><small>linguagem de “sinal” + contexto · Produto</small></div><div><b>Exposição de identificadores</b><span class="risk high">alto</span><small>mascaramento + minimização · Segurança</small></div><div><b>Indisponibilidade da fonte</b><span class="risk med">médio</span><small>cache versionado + reprocessamento · DevOps</small></div><div><b>Adoção limitada</b><span class="risk med">médio</span><small>testes com jornalistas/cidadãos · UX</small></div></div></article>
+      </div>
+      <article class="panel acceptance"><header class="panel-head"><div><span class="tag">ENTREGÁVEIS E ACEITE</span><h2>Pronto significa verificável</h2></div></header><div class="accept-grid"><div><span>01</span><b>Pipeline</b><small>reprocessa 8 arquivos sem erro estrutural</small></div><div><span>02</span><b>POC web</b><small>comparação, qualidade e rastreio funcionais</small></div><div><span>03</span><b>Testes</b><small>métricas, navegação, erro e responsividade</small></div><div><span>04</span><b>Documentação</b><small>execução, arquitetura, limites e decisões</small></div><div><span>05</span><b>Transferência</b><small>demo, relatório e repositório versionado</small></div></div></article>
+    </section>
+  </main>
+
+  <footer class="footer"><span>Farol ES · POC acadêmica FIAP · 2026</span><span>Dados: Portal da Transparência do Governo do Estado do Espírito Santo</span><button class="text-btn" data-go="projeto">Ver equipe</button></footer>
+
+  <div class="presentation" id="presentation" aria-hidden="true">
+    <div class="present-top"><span id="slideCounter">01 / 08</span><div class="timer"><span id="timerText">12:00</span><button id="timerBtn">Iniciar</button></div><button id="closePresent" aria-label="Fechar apresentação">×</button></div>
+    <div class="slide-stage" id="slideStage"></div>
+    <div class="present-controls"><button id="prevSlide">← Anterior</button><span>Use ← → ou espaço</span><button id="nextSlide">Próximo →</button></div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

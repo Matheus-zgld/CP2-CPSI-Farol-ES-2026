@@ -1,0 +1,15 @@
+{
+  "purpose": "Intervalo didático; o valor censitário da base publicada é conhecido",
+  "population": 586208,
+  "negativePopulation": 12747,
+  "censusProportion": 0.02174484142147497,
+  "sampling": "reservoir sampling uniforme sem reposição; PRNG determinístico mulberry32",
+  "seed": 20260929,
+  "n": 1200,
+  "successes": 30,
+  "estimate": 0.025,
+  "confidence": 0.95,
+  "method": "Wilson binomial",
+  "lower": 0.01756709059517496,
+  "upper": 0.03546435997742321
+}
